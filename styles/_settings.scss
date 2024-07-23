@@ -1,0 +1,71 @@
+$color1: white;
+$white: rgba(255, 255, 255, 0.171);
+$grey: rgb(231,233,235);
+$black: rgba(0, 0, 0, 0.253);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*border: 1px solid red;*/
+}
+html{
+  scroll-behavior:smooth;
+}
+li{
+  list-style: none;
+}
+a, a:visited{
+  color: $color1;
+  text-decoration: none;
+}
+@font-face {
+  font-family: "Poppins-ExtraBold";
+  src: url(../fonts/Poppins-ExtraBold.ttf);
+}
+@font-face {
+    font-family: "Poppins-LightItalic";
+    src: url(../fonts/Poppins-LightItalic.ttf);
+}
+@font-face {
+  font-family: "Poppins-Light";
+  src: url(../fonts/Poppins-Light.ttf);
+}
+
+@mixin blockwidth{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+@mixin blockwidth390{
+  max-width: 300px;
+  margin: 0 auto;
+}
+@mixin title{
+  font-family: $font1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+$font1: Poppins-LightItalic, serif;
+$font2: Poppins-LightItalic, serif;
+$font3: Poppins-Light, serif;
+
+body {
+  background: url(../img/bg.jpg) fixed center/cover;
+  min-height: 100vh;
+  position: relative;
+  &::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: $black;
+    animation: animBefore 1.5s ease forwards;
+    animation-delay: 0.15s;
+    @keyframes animBefore{
+      to{
+        opacity: 0;
+      }
+    }
+  }
+}
